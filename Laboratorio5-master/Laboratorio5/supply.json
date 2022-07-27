@@ -1,0 +1,22 @@
+[
+  {
+    "nombre": "coca cola",
+    "precio": 500,
+    "cantidad": 10
+  },
+  {
+    "nombre": "pepsi",
+    "precio": 600,
+    "cantidad": 8
+  },
+  {
+    "nombre": "fanta",
+    "precio": 550,
+    "cantidad": 10
+  },
+  {
+    "nombre": "sprite",
+    "precio": 725,
+    "cantidad": 15
+  }
+]
