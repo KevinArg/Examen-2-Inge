@@ -1,8 +1,53 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿  @model List<Laboratorio5.Models.ExpendingMachineModel>;
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<div>
+    <table class="table" >
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Cantidad disponible</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.nombre</td>
+                    <td>@item.precio</td>
+                    <td>@item.cantidad</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+    <h1>Compra</h1>
+    <table class="table" >
+        <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Coca cola</td>
+                <td><input type="number" value="0"/></td>
+            </tr>
+            <tr>
+                <td>Pepsi</td>
+                <td><input type="number" value="0"/></td>
+            </tr>
+            <tr>
+                <td>Fanta</td>
+                <td><input type="number" value="0"/></td>
+            </tr>
+            <tr>
+                <td>Sprite</td>
+                <td><input type="number" value="0"/></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
