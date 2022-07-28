@@ -1,5 +1,4 @@
-﻿  @model List<Laboratorio5.Models.ExpendingMachineModel>;
-
+﻿  @model Laboratorio5.Models.ExpendingMachineModel;
 
 <div>
     <table class="table" >
@@ -11,7 +10,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @foreach (var item in Model.supply)
             {
                 <tr>
                     <td>@item.nombre</td>
@@ -23,6 +22,9 @@
     </table>
 </div>
 <div>
+    @using (Html.BeginForm("BuyRequest", "ExpendingMachine", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
     <h1>Compra</h1>
     <table class="table" >
         <thead>
@@ -34,20 +36,22 @@
         <tbody>
             <tr>
                 <td>Coca cola</td>
-                <td><input type="number" value="0"/></td>
+                <td>@Html.TextBoxFor(model => model.transaction.quantCoca, new { @class = "form-control" })</td>
             </tr>
             <tr>
                 <td>Pepsi</td>
-                <td><input type="number" value="0"/></td>
+                <td>@Html.TextBoxFor(model => model.transaction.quantPepsi, new { @class = "form-control" })</td>
             </tr>
             <tr>
                 <td>Fanta</td>
-                <td><input type="number" value="0"/></td>
+                <td>@Html.TextBoxFor(model => model.transaction.quantFanta, new { @class = "form-control" })</td>
             </tr>
             <tr>
                 <td>Sprite</td>
-                <td><input type="number" value="0"/></td>
+                <td>@Html.TextBoxFor(model => model.transaction.quantSprite, new { @class = "form-control" })</td>
             </tr>
         </tbody>
     </table>
+    <input type="submit" class="btn btn-success" value="Comprar" />
+    }
 </div>

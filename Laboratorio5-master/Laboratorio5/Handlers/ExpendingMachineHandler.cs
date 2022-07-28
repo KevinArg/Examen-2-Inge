@@ -10,10 +10,10 @@ namespace Laboratorio5.Handlers
             var builder = WebApplication.CreateBuilder();
             rutaConexion = builder.Configuration.GetConnectionString("ExpendingMachine");
         }
-        public List<ExpendingMachineModel> ObtainCurrentSupply()
+        public List<SupplyModel> ObtainCurrentSupply()
         {
             string json = File.ReadAllText(rutaConexion);
-            return JsonSerializer.Deserialize<List<ExpendingMachineModel>>(json);
+            return JsonSerializer.Deserialize<List<SupplyModel>>(json);
         }
     }
 }
